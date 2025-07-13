@@ -4,10 +4,12 @@ require('dotenv').config();
 
 const uri = process.env.MONGODB_URI; // Your Atlas connection string
 
+
 const connOptions = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
+
 
 if (kmsProviders) {
   connOptions.autoEncryption = {
