@@ -1,4 +1,0 @@
-
-# Ignore all encryption keys and Google service account credentials
-config/dev.master-key.txt
-config/prod-service-account.json
