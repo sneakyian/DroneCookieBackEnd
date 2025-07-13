@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('dotenv').config();
+
 const { kmsProviders, encryptedFieldsMap } = require('./config/fle');
 
 
@@ -8,7 +10,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const uri = 'mongodb+srv://ianmccann194:52vM0Tf5yYU5dkP0@cluster0.9hlzj88.mongodb.net/cookie-drone?retryWrites=true&w=majority'; // Replace with your connection string
+const uri = process.env.MONGODB_URI
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error(err));
