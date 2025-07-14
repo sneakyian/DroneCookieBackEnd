@@ -15,9 +15,6 @@ mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error(err));
 
-
-
-  
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   name: String,

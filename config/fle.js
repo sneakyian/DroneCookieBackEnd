@@ -26,21 +26,21 @@ else {
     }
   };
   masterKey = {
-    projectId: 'YOUR_PROJECT_ID',
-    location: 'YOUR_KMS_REGION',    // e.g., 'us-east1'
-    keyRing: 'YOUR_KEY_RING_NAME',
-    keyName: 'YOUR_KEY_NAME',
-    // keyVersion: '1',  // optional, not usually needed
+    projectId: 'dronecookiedelivery',
+    location: 'us-east1',    // e.g., 'us-east1'
+    keyRing: 'drone-cookie-ring',
+    keyName: 'drone-cookie-key',
+    cryptoKeyVersions: '1',  // optional, not usually needed
   };
   console.log('FLE: Using GOOGLE CLOUD KMS for prod');
 }
 
-// ----- Example: Encrypted fields for 'users' collection -----
+// ----- Example: Encrypted fields for 'orders' collection -----
 encryptedFieldsMap = {
-  'cookie-drone.users': {
+  'cookie-drone.orders': {
     fields: [
       {
-        path: 'savedAddresses',
+        path: 'address',
         bsonType: 'array',
         keyId: undefined, // Will be set automatically
         queries: { queryType: 'equality' },
